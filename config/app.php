@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Pinjamkeun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -122,5 +122,11 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+
+    // 'providers' => [
+    //     // Other Service Providers
+    //     Laravel\Ui\UiServiceProvider::class,
+    // ],
+    
 
 ];
