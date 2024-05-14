@@ -2,7 +2,7 @@
     <ul class="menu">
       <li class="sidebar-title">Menu</li>
   
-      <li class="sidebar-item">
+      <li class="sidebar-item ">
         <a href="{{ route('dashboard') }}" class="sidebar-link">
           <i class="bi bi-grid-fill"></i>
           <span>Beranda</span>

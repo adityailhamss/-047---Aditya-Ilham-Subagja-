@@ -13,7 +13,7 @@
       <div class="card-body">
         <x-button-group-flex>
           <button type="button" class="btn btn-primary" id="createCommodityButton" data-bs-toggle="modal"
-            >
+          data-bs-target="#createCommodityModal">
             <i class="bi bi-plus-circle-fill"></i>
             Tambah Komoditas
           </button>
@@ -35,3 +35,10 @@
 </section>
 @endsection
 
+@push('modal')
+@include('administrator.commodity.modal.create')
+@endpush
+
+@push('script')
+@include('administrator.commodity.script')
+@endpush
