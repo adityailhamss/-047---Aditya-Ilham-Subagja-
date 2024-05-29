@@ -40,6 +40,21 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'administrator' => [
+            'driver' => 'session',
+            'provider' => 'administrators',
+        ],
+
+        'officer' => [
+            'driver' => 'session',
+            'provider' => 'officers',
+        ],
+
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
     ],
 
     /*
@@ -65,10 +80,20 @@ return [
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'administrators' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Administrator::class,
+        ],
+
+        'officers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Officer::class,
+        ],
+
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Student::class,
+        ],
     ],
 
     /*
@@ -93,7 +118,7 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
+            'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,
         ],
@@ -110,6 +135,6 @@ return [
     |
     */
 
-    'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
+    'password_timeout' => 10800,
 
 ];

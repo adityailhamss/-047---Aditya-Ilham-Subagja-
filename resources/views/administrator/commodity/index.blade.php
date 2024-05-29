@@ -27,6 +27,29 @@
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
+            <tbody>
+              @foreach ($commodities as $commodity)
+              <tr>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $commodity->name }}</td>
+                <td>
+                  <div class="btn-group gap-1">
+                    <button type="button" class="btn btn-sm btn-success editCommodityButton" data-bs-toggle="modal"
+                      data-id="{{ $commodity->id }}" data-bs-target="#editCommodityModal">
+                      <i class="bi bi-pencil-fill"></i>
+                    </button>
+
+                    <form action="{{ route('administrators.commodities.destroy', $commodity) }}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-sm btn-danger btn-delete"><i
+                          class="bi bi-trash-fill"></i></button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
           </table>
         </div>
       </div>
@@ -37,6 +60,7 @@
 
 @push('modal')
 @include('administrator.commodity.modal.create')
+@include('administrator.commodity.modal.edit')
 @endpush
 
 @push('script')

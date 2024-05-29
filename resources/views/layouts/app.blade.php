@@ -7,13 +7,10 @@
   <title>@yield('title') - {{ config('app.name') }}</title>
 
   <link rel="stylesheet" href="{{ asset('css/main/app.css') }}" />
-  <link rel="stylesheet" href="{{ asset('css/main/app-dark.css') }}" />
   <link rel="shortcut icon" href="{{ asset('images/logo/favicon.svg') }}" type="image/x-icon" />
   <link rel="shortcut icon" href="{{ asset('images/logo/favicon.png') }}" type="image/png" />
-
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
   <link rel="stylesheet" href="{{ asset('css/shared/iconly.css') }}" />
   @vite([])
 </head>
@@ -34,9 +31,17 @@
             </div>
           </div>
         </div>
+        @auth('administrator')
         @include('layouts.administrator.sidebar')
+        @endauth
 
+        @auth('officer')
+        @include('layouts.officer.sidebar')
+        @endauth
 
+        @auth('student')
+        @include('layouts.student.sidebar')
+        @endauth
       </div>
     </div>
     <div id="main">
@@ -69,7 +74,6 @@
   </div>
   <script src="{{ asset('js/bootstrap.js') }}"></script>
   <script src="{{ asset('js/app.js') }}"></script>
-
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>

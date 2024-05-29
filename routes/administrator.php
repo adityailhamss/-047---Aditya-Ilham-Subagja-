@@ -11,6 +11,7 @@ use App\Http\Controllers\Administrator\SchoolClassController;
 use App\Http\Controllers\Administrator\StudentController;
 use App\Http\Controllers\Administrator\SubjectController;
 use App\Http\Controllers\Administrator\UserController;
+use App\Http\Controllers\Administrator\OfficerController;
 use App\Http\Controllers\Exports\BorrowingReportExport;
 use Illuminate\Support\Facades\Route;
 
@@ -57,9 +58,15 @@ Route::middleware('auth:administrator')->name('administrators.')->prefix('admini
         'edit'
     );
 
+    Route::resource('officers', OfficerController::class)->except(
+        'create',
+        'show',
+        'edit'
+    );
+
     Route::get('/borrowings', [BorrowingController::class, 'index'])->name('borrowings.index');
     Route::get('/borrowings/report', [BorrowingReportController::class, 'index'])->name('borrowings-report.index');
-
+   
     Route::get('/borrowings/history', BorrowingHistoryController::class)->name('borrowings-history.index');
 
     Route::controller(ProfileSettingController::class)->group(function () {

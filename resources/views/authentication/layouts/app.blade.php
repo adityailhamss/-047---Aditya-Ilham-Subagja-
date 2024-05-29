@@ -7,6 +7,7 @@
     <title>@yield('title') - {{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ asset('css/main/app.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/pages/auth.css') }}" />
+    <link rel="background" href="{{ asset('images/bg/bg2.jpg') }}" type="image/jpg" />
     <link rel="shortcut icon" href="{{ asset('images/logo/favicon.svg') }}" type="image/x-icon" />
     <link rel="shortcut icon" href="{{ asset('images/logo/favicon.png') }}" type="image/png" />
     @vite([])
@@ -17,7 +18,7 @@
         @yield('content')
     </div>
 
-    {{-- <script src="{{ asset('js/bootstrap.js') }}"></script> --}}
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
 </body>
 
 </html>

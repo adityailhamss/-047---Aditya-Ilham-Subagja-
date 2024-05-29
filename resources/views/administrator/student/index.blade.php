@@ -6,14 +6,15 @@
 @section('content')
 <section class="row">
   <div class="col-12">
-    {{-- @include('utilities.alert') --}}
+    @include('utilities.alert')
     <div class="card">
       <div class="card-header">
         <h4 class="card-title">@yield('title')</h4>
       </div>
       <div class="card-body">
         <x-button-group-flex>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+          data-bs-target="#createStudentModal">
             <i class="bi bi-plus-circle-fill"></i>
             Tambah Mahasiswa
           </button>
@@ -31,7 +32,37 @@
               </tr>
             </thead>
             <tbody>
-              
+              @foreach ($students as $student)
+              <tr>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>
+                  <span class="badge rounded-pill text-bg-primary">{{ $student->identification_number }}</span>
+                </td>
+                <td>{{ $student->name }}</td>
+                <td>{{ $student->programStudy->name }}</td>
+                <td>{{ $student->schoolClass->name }}</td>
+                <td>
+                  <div class="btn-group gap-1">
+                    <button type="button" class="btn btn-sm btn-primary showStudentButton" data-bs-toggle="modal"
+                      data-id="{{ $student->id }}" data-bs-target="#detailStudentModal">
+                      <i class="bi bi-eye-fill"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-sm btn-success editStudentButton" data-bs-toggle="modal"
+                      data-id="{{ $student->id }}" data-bs-target="#editStudentModal">
+                      <i class="bi bi-pencil-fill"></i>
+                    </button>
+
+                    <form action="{{ route('administrators.students.destroy', $student) }}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-sm btn-danger btn-delete"><i
+                          class="bi bi-trash-fill"></i></button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
@@ -41,3 +72,12 @@
 </section>
 @endsection
 
+@push('modal')
+@include('administrator.student.modal.create')
+@include('administrator.student.modal.show')
+@include('administrator.student.modal.edit')
+@endpush
+
+@push('script')
+@include('administrator.student.script')
+@endpush

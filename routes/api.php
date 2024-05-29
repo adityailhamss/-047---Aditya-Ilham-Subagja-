@@ -8,6 +8,7 @@ use App\Http\Controllers\API\v1\SchoolClassController;
 use App\Http\Controllers\API\v1\StudentController;
 use App\Http\Controllers\API\v1\SubjectController;
 use App\Http\Controllers\API\v1\UserController;
+use App\Http\Controllers\API\v1\OfficerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +36,5 @@ Route::name('api.v1.')->prefix('v1')->group(function () {
     Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
     Route::get('/borrowings/statistics', [ChartController::class, 'index'])->name('borrowings.statistics');
     Route::get('/borrowings/{borrowing}', [BorrowingController::class, 'show'])->name('borrowings.show');
+    Route::get('/officers/{officer}', [OfficerController::class, 'show'])->name('officers.show');
 });

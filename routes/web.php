@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Authentication\LoginController;
 use App\Http\Controllers\Authentication\LogoutController;
+use App\Http\Controllers\Authentication\RegisterController;
+use App\Http\Controllers\ChartController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
