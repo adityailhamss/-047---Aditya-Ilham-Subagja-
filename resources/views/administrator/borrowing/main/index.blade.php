@@ -6,12 +6,14 @@
 @section('content')
 <section class="row">
   <div class="col-12">
-    @include('utilities.alert')
+    @include('utilities.alert') <!-- For alert -->
     <div class="card">
       <div class="card-header">
         <h4 class="card-title">@yield('title')</h4>
       </div>
       <div class="card-body">
+
+        <!-- Table displaying borrowing data-->
         <div class="table-responsive">
           <table class="table datatable">
             <thead>
@@ -44,6 +46,7 @@
                   </span>
                 </td>
                 <td>
+                  <!-- Conditional display of return time -->
                   @if($borrowing->time_end === NULL)
                   <span class="badge text-bg-info" data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="Sedang dipinjam">
@@ -56,6 +59,7 @@
                   @endif
                 </td>
                 <td>
+                  <!-- Conditional display of validation status -->
                   @if($borrowing->officer_id !== NULL)
                   <span class="badge text-bg-success" data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="Sudah divalidasi oleh {{ $borrowing->officer->name }}">
@@ -69,6 +73,7 @@
                   @endif
                 </td>
                 <td>
+                  <!-- Action button to view borrowing details -->
                   <div class="btn-group gap-1">
                     <button type="button" class="btn btn-sm btn-success showBorrowingButton" data-bs-toggle="modal"
                       data-id="{{ $borrowing->id }}" data-bs-target="#detailBorrowingModal">

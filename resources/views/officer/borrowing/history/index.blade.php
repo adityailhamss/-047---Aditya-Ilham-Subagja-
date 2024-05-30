@@ -13,7 +13,7 @@
       </div>
       <div class="card-body">
         <div class="alert alert-info" role="alert">
-          Tabel di bawah adalah daftar riwayat peminjaman yang sudah dilakukan oleh Mahasiswa.
+          Tabel di bawah adalah daftar riwayat peminjaman yang sudah dilakukan oleh Siswa.
         </div>
         <form action="" method="GET">
           <div class="accordion pb-3">
@@ -48,9 +48,9 @@
                     </div>
                     <div class="col-md-6">
                       <div class="mb-3">
-                        <label for="student_id" class="form-label">Mahasiswa:</label>
+                        <label for="student_id" class="form-label">Siswa:</label>
                         <select name="student_id" id="student_id" class="form-select">
-                          <option value="">Pilih mahasiswa..</option>
+                          <option value="">Pilih Siswa..</option>
                           @foreach ($students as $student)
                           <option value="{{ $student->id }}" @selected(request('student_id')==$student->id)>{{
                             $student->identification_number }} - {{ $student->name }}
@@ -115,7 +115,7 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nama Mahasiswa</th>
+                <th scope="col">Nama Siswa</th>
                 <th scope="col">Komoditas</th>
                 <th scope="col">Tanggal</th>
                 <th scope="col">Jam Pinjam</th>

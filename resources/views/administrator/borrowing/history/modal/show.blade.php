@@ -11,6 +11,7 @@
             <div class="alert alert-primary">
               Data di bawah adalah detail data mahasiswa.
             </div>
+            <!-- Form for show data history borrowing -->
             <div class="row">
               <div class="col-md-12 col-lg-6">
                 <div class="mb-3">
@@ -67,7 +68,7 @@
               </div>
               <div class="col-md-12 col-lg-6">
                 <div class="mb-3">
-                  <label class="form-label">Pada Mata Kuliah</label>
+                  <label class="form-label">Pada Mata Pelajaran</label>
                   <input class="form-control" id="subject_name" disabled>
                 </div>
               </div>

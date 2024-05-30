@@ -11,6 +11,8 @@
         <h4 class="card-title">@yield('title')</h4>
       </div>
       <div class="card-body">
+
+        <!-- Use component x-button-group-flex -->
         <x-button-group-flex>
           <button type="button" class="btn btn-primary" id="createCommodityButton" data-bs-toggle="modal"
           data-bs-target="#createCommodityModal">
@@ -18,6 +20,8 @@
             Tambah Komoditas
           </button>
         </x-button-group-flex>
+
+        <!-- Table displaying commodities data-->
         <div class="table-responsive">
           <table class="table datatable">
             <thead>
@@ -34,11 +38,13 @@
                 <td>{{ $commodity->name }}</td>
                 <td>
                   <div class="btn-group gap-1">
+                    <!-- Button for edit data commodity-->
                     <button type="button" class="btn btn-sm btn-success editCommodityButton" data-bs-toggle="modal"
                       data-id="{{ $commodity->id }}" data-bs-target="#editCommodityModal">
                       <i class="bi bi-pencil-fill"></i>
                     </button>
 
+                    <!-- Button for delete data commodity-->
                     <form action="{{ route('administrators.commodities.destroy', $commodity) }}" method="POST">
                       @csrf
                       @method('DELETE')

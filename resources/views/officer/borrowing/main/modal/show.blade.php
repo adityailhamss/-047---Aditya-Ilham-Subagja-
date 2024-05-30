@@ -9,18 +9,18 @@
         <div class="row">
           <div class="col-md-12 col-lg-6">
             <div class="alert alert-primary">
-              Data di bawah adalah detail data mahasiswa.
+              Data di bawah adalah detail data Siswa.
             </div>
             <div class="row">
               <div class="col-md-12 col-lg-6">
                 <div class="mb-3">
-                  <label class="form-label">Nomor Identitas Mahasiswa</label>
+                  <label class="form-label">Nomor Identitas Siswa</label>
                   <input class="form-control" id="student_identification_number" disabled>
                 </div>
               </div>
               <div class="col-md-12 col-lg-6">
                 <div class="mb-3">
-                  <label class="form-label">Nama Mahasiswa</label>
+                  <label class="form-label">Nama Siswa</label>
                   <input class="form-control" id="student_name" disabled>
                 </div>
               </div>

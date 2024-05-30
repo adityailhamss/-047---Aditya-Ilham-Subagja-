@@ -11,6 +11,7 @@
         <h4 class="card-title">@yield('title')</h4>
       </div>
       <div class="card-body">
+        <!-- Use component x-button-group-flex -->
         <x-button-group-flex>
           <button type="button" class="btn btn-primary" id="createCommodityButton" data-bs-toggle="modal"
           data-bs-target="#createSchoolClassModal">
@@ -18,6 +19,7 @@
             Tambah Kelas
           </button>
         </x-button-group-flex>
+        <!-- Table displaying data-->
         <div class="table-responsive">
           <table class="table datatable">
             <thead>
@@ -34,11 +36,13 @@
                 <td>{{ $schoolClass->name }}</td>
                 <td>
                   <div class="btn-group gap-1">
+                    <!-- Button for edit data-->
                     <button type="button" class="btn btn-sm btn-success editSchoolClassButton" data-bs-toggle="modal"
                       data-id="{{ $schoolClass->id }}" data-bs-target="#editSchoolClassModal">
                       <i class="bi bi-pencil-fill"></i>
                     </button>
 
+                    <!-- Button for delete data-->
                     <form action="{{ route('administrators.school-classes.destroy', $schoolClass) }}" method="POST">
                       @csrf
                       @method('DELETE')

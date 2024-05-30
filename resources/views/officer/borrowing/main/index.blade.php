@@ -19,7 +19,7 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nama Mahasiswa</th>
+                <th scope="col">Nama Siswa</th>
                 <th scope="col">Komoditas</th>
                 <th scope="col">Tanggal</th>
                 <th scope="col">Jam Pinjam</th>

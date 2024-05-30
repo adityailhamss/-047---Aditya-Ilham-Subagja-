@@ -20,7 +20,9 @@ class SchoolClassSeeder extends Seeder
                     'name' => $className,
                 ]);
             }
+        }
 
+            for ($i = 1; $i <= 6; $i++) {
             foreach (range(1, 7) as $char) {
                 $className = 'IPS '.$i.$char;
 

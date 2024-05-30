@@ -12,19 +12,21 @@
         <h4 class="card-title">@yield('title')</h4>
       </div>
       <div class="card-body">
+        <!-- Use component x-button-group-flex -->
         <x-button-group-flex>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal"
           data-bs-target="#createStudentModal">
             <i class="bi bi-plus-circle-fill"></i>
-            Tambah Mahasiswa
+            Tambah Siswa
           </button>
         </x-button-group-flex>
+        <!-- Table displaying data-->
         <div class="table-responsive">
           <table class="table datatable">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">NIM</th>
+                <th scope="col">NIS</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Program Studi</th>
                 <th scope="col">Kelas</th>
@@ -43,16 +45,19 @@
                 <td>{{ $student->schoolClass->name }}</td>
                 <td>
                   <div class="btn-group gap-1">
+                    <!-- Button for showing data-->
                     <button type="button" class="btn btn-sm btn-primary showStudentButton" data-bs-toggle="modal"
                       data-id="{{ $student->id }}" data-bs-target="#detailStudentModal">
                       <i class="bi bi-eye-fill"></i>
                     </button>
 
+                    <!-- Button for edit data-->
                     <button type="button" class="btn btn-sm btn-success editStudentButton" data-bs-toggle="modal"
                       data-id="{{ $student->id }}" data-bs-target="#editStudentModal">
                       <i class="bi bi-pencil-fill"></i>
                     </button>
 
+                    <!-- Button for delete data-->
                     <form action="{{ route('administrators.students.destroy', $student) }}" method="POST">
                       @csrf
                       @method('DELETE')

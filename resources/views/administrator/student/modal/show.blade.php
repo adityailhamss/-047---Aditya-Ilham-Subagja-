@@ -1,3 +1,4 @@
+<!-- Button for open modal form create data -->
 <div class="modal fade" id="detailStudentModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -6,10 +7,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <!-- Displaying data -->
         <div class="row">
           <div class="col-xs-12 col-md-6">
             <div class="mb-3">
-              <label for="identification_number" class="form-label">NIM</label>
+              <label for="identification_number" class="form-label">NIS</label>
               <input type="text" id="identification_number" class="form-control" disabled>
             </div>
           </div>

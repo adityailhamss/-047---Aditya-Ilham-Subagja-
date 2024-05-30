@@ -12,12 +12,14 @@
         <h4 class="card-title">@yield('title')</h4>
       </div>
       <div class="card-body">
+        <!-- Use component x-button-group-flex -->
         <x-button-group-flex>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createOfficerModal">
             <i class="bi bi-plus-circle-fill" ></i>
             Tambah Officer
           </button>
         </x-button-group-flex>
+        <!-- Table displaying officer data-->
         <div class="table-responsive">
           <table class="table datatable">
             <thead>
@@ -38,11 +40,13 @@
                 <td>{{ $officer->phone_number }}</td>
                 <td>
                   <div class="btn-group gap-1">
+                    <!-- Button for edit data officer-->
                     <button type="button" class="btn btn-sm btn-success editOfficerButton" data-bs-toggle="modal"
                       data-id="{{ $officer->id }}" data-bs-target="#editOfficerModal">
                       <i class="bi bi-pencil-fill"></i>
                     </button>
 
+                    <!-- Button for delete data officer-->
                     <form action="{{ route('administrators.officers.destroy', $officer) }}" method="POST">
                       @csrf
                       @method('DELETE')

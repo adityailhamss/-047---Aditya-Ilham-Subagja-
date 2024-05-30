@@ -14,19 +14,24 @@
         <div class="alert alert-info" role="alert">
           Tabel di bawah adalah daftar riwayat peminjaman yang sudah dilakukan oleh Mahasiswa.
         </div>
+        
+        <!-- Form for filtering the borrowing history -->
         <form action="" method="GET">
           <div class="accordion pb-3">
             <div class="accordion-item">
               <h2 class="accordion-header">
+                <!-- Accordion button to toggle filter panel -->
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelFilter"
                   aria-expanded="true" aria-controls="panelFilter">
                   <span class="me-3"><i class="bi bi-filter"></i></span>Filter (klik atau sentuh untuk membuka/menutup
                   menu filter)
                 </button>
               </h2>
+              <!-- Filter panel for various filtering options -->
               <div id="panelFilter" class="accordion-collapse collapse show">
                 <div class="accordion-body">
                   <div class="row">
+                    <!-- Date filter input -->
                     <div class="col-md-6">
                       <div class="mb-3">
                         <div class="d-flex">
@@ -45,6 +50,7 @@
                         </div>
                       </div>
                     </div>
+                    <!-- Student filter dropdown -->
                     <div class="col-md-6">
                       <div class="mb-3">
                         <label for="student_id" class="form-label">Mahasiswa:</label>
@@ -61,6 +67,7 @@
                   </div>
 
                   <div class="row">
+                    <!-- Return status filter dropdown -->
                     <div class="col-md-6">
                       <div class="mb-3">
                         <label for="status" class="form-label">Status pengembalian:</label>
@@ -72,6 +79,7 @@
                       </div>
                     </div>
 
+                    <!-- Validation status filter dropdown -->
                     <div class="col-md-6">
                       <div class="mb-3">
                         <label for="validate" class="form-label">Status validasi:</label>
@@ -85,6 +93,7 @@
                   </div>
 
                   <div class="row">
+                    <!-- Commodity filter dropdown -->
                     <div class="col-md-6">
                       <div class="mb-3">
                         <label for="commodity_id" class="form-label">Komoditas:</label>
@@ -100,6 +109,7 @@
                     </div>
                   </div>
 
+                  <!-- Submit button for applying filters -->
                   <div class="d-flex pt-3 pb-3">
                     <button type="submit" class="btn btn-primary flex-fill">Cari</button>
                   </div>
@@ -109,6 +119,7 @@
           </div>
         </form>
 
+        <!-- Table displaying borrowing history -->
         <div class="table-responsive">
           <table class="table datatable">
             <thead>
@@ -142,6 +153,7 @@
                   </span>
                 </td>
                 <td>
+                  <!-- Conditional display of return time -->
                   @if($borrowing->time_end === NULL)
                   <span class="badge text-bg-info" data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="Sedang dipinjam">
@@ -154,6 +166,7 @@
                   @endif
                 </td>
                 <td>
+                  <!-- Conditional display of validation status -->
                   @if($borrowing->officer_id !== NULL)
                   <span class="badge text-bg-success" data-bs-toggle="tooltip" data-bs-placement="top"
                     data-bs-title="Sudah divalidasi oleh {{ $borrowing->officer->name }}">
@@ -167,6 +180,7 @@
                   @endif
                 </td>
                 <td>
+                  <!-- Action button to view borrowing details -->
                   <div class="btn-group gap-1">
                     <button type="button" class="btn btn-sm btn-success showBorrowingButton" data-bs-toggle="modal"
                       data-id="{{ $borrowing->id }}" data-bs-target="#detailBorrowingModal">

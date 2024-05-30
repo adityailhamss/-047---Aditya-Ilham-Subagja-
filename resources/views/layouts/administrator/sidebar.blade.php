@@ -75,6 +75,12 @@
           <span>Petugas</span>
         </a>
       </li>
+      <li class="sidebar-item {{ request()->routeIs('administrators.profile-settings.*') ? 'active' : '' }}">
+        <a href="{{ route('administrators.profile-settings.index') }}" class="sidebar-link">
+          <i class="bi bi-person-fill-gear"></i>
+          <span>Pengaturan Profil</span>
+        </a>
+      </li>
   
       <li class="sidebar-title"></li>
       <hr>

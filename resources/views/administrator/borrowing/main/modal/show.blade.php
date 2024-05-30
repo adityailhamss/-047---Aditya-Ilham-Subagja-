@@ -11,6 +11,7 @@
             <div class="alert alert-primary">
               Data di bawah adalah detail data mahasiswa.
             </div>
+            <!-- Form for show data history borrowing -->
             <div class="row">
               <div class="col-md-12 col-lg-6">
                 <div class="mb-3">

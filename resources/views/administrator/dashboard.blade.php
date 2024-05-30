@@ -7,6 +7,7 @@
 <section class="row">
   <div class="col-12 col-lg-9">
     <div class="row">
+      <!-- Card for Total Administrators -->
       <div class="col-6 col-lg-4 col-md-6">
         <div class="card">
           <a href="{{ route('administrators.users.index') }}">
@@ -17,6 +18,7 @@
                     <i class="iconly-boldProfile"></i>
                   </div>
                 </div>
+                <!-- Data for Administrator Card -->
                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                   <h6 class="text-muted font-semibold">Total Administrator</h6>
                   <h6 class="font-extrabold mb-0">{{ $counts['administrator'] }}</h6>
@@ -26,6 +28,7 @@
           </a>
         </div>
       </div>
+      <!-- Card for Total Siswa -->
       <div class="col-6 col-lg-4 col-md-6">
         <div class="card">
           <a href="{{ route('administrators.students.index') }}">
@@ -36,6 +39,7 @@
                     <i class="iconly-boldProfile"></i>
                   </div>
                 </div>
+                <!-- Data for Siswa Card -->
                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                   <h6 class="text-muted font-semibold">Total Siswa</h6>
                   <h6 class="font-extrabold mb-0">{{ $counts['student'] }}</h6>
@@ -45,6 +49,7 @@
           </a>
         </div>
       </div>
+      <!-- Card for Total Komoditas -->
       <div class="col-6 col-lg-4 col-md-6">
         <div class="card">
           <a href="{{ route('administrators.commodities.index') }}">
@@ -55,6 +60,7 @@
                     <i class="iconly-boldBookmark"></i>
                   </div>
                 </div>
+                <!-- Data for Komoditas Card -->
                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                   <h6 class="text-muted font-semibold">Total Komoditas</h6>
                   <h6 class="font-extrabold mb-0">{{ $counts['commodity'] }}</h6>
@@ -65,6 +71,7 @@
         </div>
       </div>
     </div>
+    <!-- Start of the second row with borrowing chart -->
     <div class="row">
       <div class="col-12">
         <div class="card">
@@ -77,11 +84,14 @@
             </div>
           </div>
           <div class="card-body">
+            <!-- Placeholder for the borrowing chart -->
             <div id="chart-borrowing-by-year" style="height: 200px"></div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Start of the third row with not returned commodities -->
     <div class="row">
       <div class="col-12 col-xl-12">
         <div class="card">
@@ -103,6 +113,7 @@
                   @if ($borrowing->student)
                   <tr>
                     <td>
+                      <!-- Display student information with tooltip -->
                       <span class="badge text-bg-primary" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-title="{{ $borrowing->student->identification_number }} - {{ $borrowing->student->phone_number }}">{{
                         $borrowing->student->name }}</span>
@@ -122,7 +133,10 @@
       </div>
     </div>
   </div>
+
+  <!-- Start of the right-side column for additional info -->
   <div class="col-12 col-lg-3">
+    <!-- Card for displaying administrator's profile -->
     <div class="card">
       <div class="card-body py-4 px-4">
         <div class="d-flex align-items-center">
@@ -133,16 +147,20 @@
         </div>
       </div>
     </div>
+    <!-- Card for displaying most borrowed commodities -->
     <div class="card">
       <div class="card-header">
         <h4>Komoditas Terbanyak Dipinjam</h4>
       </div>
       <div class="card-content pb-4">
         <div class="card-body">
+          <!-- Placeholder for pie chart of most borrowed commodities -->
           <div id="chart-borrowing-pie" style="height: 300px"></div>
         </div>
       </div>
     </div>
+
+    <!-- Card for displaying recently registered students -->
     <div class="card">
       <div class="card-header">
         <h4>Siswa Yang Baru Terdaftar</h4>

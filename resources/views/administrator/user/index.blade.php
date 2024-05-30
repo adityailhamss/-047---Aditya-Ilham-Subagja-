@@ -12,6 +12,7 @@
         <h4 class="card-title">@yield('title')</h4>
       </div>
       <div class="card-body">
+        <!-- Use component x-button-group-flex -->
         <x-button-group-flex>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal"
           data-bs-target="#createAdministratorModal">
@@ -19,6 +20,7 @@
             Tambah Administrator
           </button>
         </x-button-group-flex>
+        <!-- Table displaying data-->
         <div class="table-responsive">
           <table class="table datatable">
             <thead>

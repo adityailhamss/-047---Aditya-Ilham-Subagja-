@@ -1,18 +1,20 @@
+<!-- Button for open modal form create data -->
 <div class="modal fade" id="editStudentModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5">Ubah Mahasiswa</h1>
+        <h1 class="modal-title fs-5">Ubah Siswa</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <!-- Form create or add data -->
         <form action="#" method="POST">
           @csrf
           @method('PUT')
           <div class="row">
             <div class="col-md-12 col-lg-4">
               <div class="mb-3">
-                <label for="identification_number" class="form-label">NIM</label>
+                <label for="identification_number" class="form-label">NIS</label>
                 <input type="text" name="identification_number" id="identification_number" class="form-control"
                   placeholder="Masukkan nim..">
               </div>
